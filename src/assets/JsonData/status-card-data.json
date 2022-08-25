@@ -1,0 +1,16 @@
+[    {
+    "icon": "bx bxs-calendar-heart bx-burst",
+    "count": "2022-10-10",
+    "title": "Date"
+    },
+    {
+        "icon": "bx bxs-user bx-burst",
+        "count": "70 ppl",
+        "title": "Guest Count"
+    },
+    {
+        "icon": "bx bx-money bx-burst",
+        "count": "400 000",
+        "title": "Budget"
+    }
+]

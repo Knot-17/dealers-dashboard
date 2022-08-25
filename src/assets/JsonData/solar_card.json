@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "bx bx-book bx-tada",
+        "count": "33",
+        "title": "Total Bookings"
+    },
+    {
+        "icon": "bx bx-money bx-tada",
+        "count": "30000",
+        "title": "Income on last booking"
+    },
+    {
+        "icon": "bx bx-plus-circle bx-tada",
+        "count": "350 000 Rs",
+        "title": "Total Revenue"
+    },
+    {
+        "icon": "bx bx-chevrons-up bx-tada",
+        "count": "20% ^",
+        "title": "Revenue Percentage"
+    }
+]

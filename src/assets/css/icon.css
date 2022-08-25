@@ -1,0 +1,12 @@
+.star__icon_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 130px;
+}
+
+.destination__button{
+    display: flex;
+    margin-bottom: 20px;
+}

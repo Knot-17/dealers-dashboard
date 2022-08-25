@@ -1,0 +1,40 @@
+[{
+    "Customer_Name": "Ninthu",
+    "Date_Booked": "2022-05-02",
+    "Location": "Wellawate",
+    "City" :"Colombo",
+    "transaction" :"40000"
+},
+{
+    "Customer_Name": "Keishini",
+    "Date_Booked": "2022-04-05",
+    "Location": "Jaya Pura",
+    "City" :"Kelaniya",
+    "transaction" :"50000"
+},
+{
+    "Customer_Name": "Sandun",
+    "Date_Booked": "2022-05-30",
+    "Location": "Moutnlavania",
+    "City" :"Kandy",
+    "transaction" :"60000"
+},
+{
+    "Customer_Name": "Dinith",
+    "Date_Booked": "2022-08-02",
+    "Location": "Kalutra",
+    "City" :"Kandy municipal council",
+    "transaction" :"10000"
+},
+{
+    "Customer_Name": "Ayisha",
+    "Date_Booked": "2022-01-08",
+    "Location": "Kandy",
+    "City" :"colombo municipal council",
+    "transaction" :"50000"
+}
+
+
+
+
+]
