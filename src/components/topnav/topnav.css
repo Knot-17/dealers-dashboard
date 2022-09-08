@@ -48,6 +48,8 @@
     display: flex;
     align-items: center;
     padding:20px;
+    color: black;
+
 }
 
 .notification-item:hover {
@@ -80,4 +82,5 @@
 .topnav__right-user__name {
     font-size:1rem;
     font-weight:600;
+
 }

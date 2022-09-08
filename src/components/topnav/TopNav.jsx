@@ -3,7 +3,6 @@ import DropDown from '../dropdown/DropDown'
 import notifications from '../../assets/JsonData/notification.json'
 import user_image from '../../assets/images/tuat.png'
 import user_menu from '../../assets/JsonData/user_menus.json'
-import Thememenu from '../theme/Thememenu'
 
 import './topnav.css'
 
@@ -42,7 +41,7 @@ const renderUserToggle =(user) => (
     )
 
 const renderUserMenu=(item,index) =>(
-        <Link to='/' key={index}>
+        <Link to={item.route} key={index}>
             <div className="notification-item">
                 <i className={item.icon}></i>
                 <span>{item.content}</span>

@@ -33,6 +33,7 @@
     margin-bottom:40px;
     font-weight: 600;
     transition: color .3s ease 0s;
+    color: black;
 }
 
 .sidebar__item-inner > i{

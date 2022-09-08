@@ -6,6 +6,7 @@ import Dashboard from '../Screens/Dashboard'
 import Customer from '../Screens/Customer'
 import Analytics from '../Screens/Analytics'
 import Events from '../Screens/Events'
+import Profile from '../Screens/Profile'
 
 function Routes() {
     return (
@@ -14,6 +15,7 @@ function Routes() {
             <Route path='/customers' component={Customer}/>
             <Route path='/solar_analytics' component={Analytics}/>
             <Route path='/events' component={Events}/>
+            <Route path='/profile' component={Profile}/>
         </Switch>
     )
 }

@@ -21,7 +21,7 @@ const store = createStore(
 )
 
 
-document.title = 'Ex-Air'
+document.title = 'Client Portal'
 
 ReactDOM.render(
   <Provider store={store}>
