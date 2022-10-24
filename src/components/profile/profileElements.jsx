@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     display:grid;
     grid-template-rows: 40% 60%;
-    row-gap: 1rem;
     align-items: flex-end;
     justify-content: flex-start;
     width: 100%;

@@ -1,7 +1,8 @@
-import React ,{useEffect} from 'react'
+import React ,{useEffect,useState} from 'react'
 import Checkbox from '@mui/material/Checkbox';
 import CardMedia from '@mui/material/CardMedia';
 
+import axios from 'axios';
 
 import { Link } from 'react-router-dom'
 
@@ -17,20 +18,6 @@ import ThemeAction from '../redux/actions/ThemeAction'
 import Ella from './../assets/images/ella.jpg'
 
 
-// const topCustomers = {
-//     head: [
-//         'Customer_ID',
-//         'lon & lat',
-//         'location'
-//     ],
-//     body: [
-//         {
-//             "username": "m0001",
-//             "order": "6.87, 79.86",
-//             "price": "Wellawate"
-//         }
-//     ]
-// }
 
 const renderCustomerHead=(item,index)=>(
     <th key={index}>{item}</th>
@@ -101,8 +88,10 @@ const renderOrderBody = (item, index) => (
 
 
 const Dashboard = () => {
-
+    localStorage.setItem('id', 1);
    
+    
+
 
     const themeReducer = useSelector(state => state.ThemeReducer.mode)
     return (

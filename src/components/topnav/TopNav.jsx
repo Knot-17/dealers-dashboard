@@ -1,21 +1,17 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import DropDown from '../dropdown/DropDown'
 import notifications from '../../assets/JsonData/notification.json'
 import user_image from '../../assets/images/tuat.png'
 import user_menu from '../../assets/JsonData/user_menus.json'
 
+import axios from 'axios';
+
 import './topnav.css'
 
 import {Link} from 'react-router-dom'
 
-// import firebase from '../../utils/firebase';
-import { useEffect, useState } from "react";
-import {onSnapshot ,collection} from 'firebase/firestore'
-import db from "./../../utils/firebase"
-// firebase.firestore().collection('notificaation').add({})
 
 const curr_user ={
-    display_name:'knoT',
     image:user_image
 }
 
@@ -29,23 +25,43 @@ const renderNotificationItem =(item,index) =>(
     </div>
 )
 
-const renderUserToggle =(user) => (
+const renderUserToggle =(user) =>
+    (
     <div className="topnav__right-user">
         <div className="topnav__right-user__image">
-            <img src={user.image} alt=""/>
+            <img src={user_image} alt=""/>
         </div>
         <div className="topnav__right-user__name">
-            {user.display_name}
+            {user.username}
         </div>
     </div>
     )
+const handleLogout = () => {
+    // delete table api
+    axios.delete(`http://localhost:5000/api/v1/deleteAllrows`)
+    .then((res) => {
+        console.log(res);
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+    
+
+    localStorage.clear();
+    window.location.href = "http://localhost:3000/signin";
+}
 
 const renderUserMenu=(item,index) =>(
         <Link to={item.route} key={index}>
-            <div className="notification-item">
+            { item.content !== 'Logout' ? <div className="notification-item">
                 <i className={item.icon}></i>
                 <span>{item.content}</span>
-            </div>
+            </div> : <div className="notification-item" onClick={handleLogout}>
+                <i className={item.icon}></i>
+                <span>{item.content}</span>
+            </div>}
+            
+            
         </Link>
     )
 
@@ -53,8 +69,20 @@ const renderUserMenu=(item,index) =>(
 const TopNav = () => {
 
   
+    const [dealer, setDealer] = useState('');
+    
+    useEffect(() =>{
+        axios.get(`http://localhost:5000/api/v1/getDealer/${localStorage.getItem('id')}`)
+            .then((res) => {
+              setDealer(res.data[0]);
+                console.log(res.data);
+            }).catch((err) => {
+                console.log(err);
+                });},[]);
 
-
+    localStorage.setItem('dealersID',dealer.id);
+    localStorage.setItem('services',dealer.services);
+    localStorage.setItem('username',dealer.username);
     return (
         <div className='topnav'>
              <div className="topnav__search">
@@ -65,7 +93,7 @@ const TopNav = () => {
                  <div className="topnav__right-item">
                      {}
                      <DropDown
-                        customToggle={() => renderUserToggle(curr_user) }
+                        customToggle={() => renderUserToggle(dealer) }
                         contentData={user_menu}
                         renderItems={(item,index) => renderUserMenu(item,index)}
                      />
