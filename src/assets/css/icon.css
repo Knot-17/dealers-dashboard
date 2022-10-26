@@ -10,3 +10,45 @@
     display: flex;
     margin-bottom: 20px;
 }
+.button__container{
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+    margin-right:6px ;
+  }
+
+  .link__button{
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+    margin-right:6px ;
+    text-decoration: none;
+    color: rgb(45, 234, 162);
+    font-size: 15px;
+  }
+
+
+  .text__content{
+    display: flex;
+    flex-direction: row;
+ gap: 5px;
+ align-items: center;
+    margin: 10px;
+    color: rgb(1, 1, 27) ;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .content__format{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .bottom__content{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+  }

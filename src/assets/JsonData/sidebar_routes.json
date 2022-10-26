@@ -7,12 +7,17 @@
     {
         "display_name": "Customers",
         "route": "/customers",
-        "icon": "bx bx-user-pin"
+        "icon": "bx bxs-user-detail"
     },
     {
         "display_name": "Events",
         "route": "/events",
-        "icon": "bx bx-package"
+        "icon": "bx bx-folder-plus"
+    },
+    {
+        "display_name": "View Quotations",
+        "route": "/update",
+        "icon": "bx bxs-bookmark-heart"
     },
    
     {
@@ -21,7 +26,7 @@
         "icon": "bx bx-bar-chart-alt"
     },
     {
-        "display_name": "settings",
+        "display_name": "Settings",
         "route": "/settings",
         "icon": "bx bx-cog"
     }
