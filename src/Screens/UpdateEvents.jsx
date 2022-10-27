@@ -211,15 +211,14 @@ const UpdateEvents = () => {
       key: "view",
       render: (item, record) => (
         <Space size="middle">
-          <button
-            className="bg-blue-700 text-center rounded-md p-2 text-sm text-white text w-20"
+          <ButtonElement
             onClick={(e) => {
               e.preventDefault();
               edit(item);
             }}
           >
             View
-          </button>
+          </ButtonElement>
         </Space>
       ),
     },
@@ -228,15 +227,14 @@ const UpdateEvents = () => {
       key: "Delete",
       render: (item, record) => (
         <Space size="middle">
-          <button
-            className="bg-red-700 text-center rounded-md p-2 text-sm text-white w-20"
+          <ButtonElementEdit
             onClick={(e) => {
               e.preventDefault();
               del(item);
             }}
           >
             Delete
-          </button>
+          </ButtonElementEdit>
         </Space>
       ),
     },
@@ -245,55 +243,68 @@ const UpdateEvents = () => {
     <div className="mr-4 mt-4">
       <MainContainer>
         <Table columns={columns} dataSource={users} />
-        <ReceiptContainer>
-          <ReceiptHeader>
-            {" "}
-            <Heading> Request quotation by {formData.firstname} </Heading>{" "}
-          </ReceiptHeader>
-          <ReceiptBody>
-            <InputContainerDouble>
-              <InputBox>
-                <PersonIcon />
-                <Label> {formData.firstname} </Label>
-              </InputBox>
-              <InputBox>
-                <PersonIcon />
-                <Label> {formData.lastname} </Label>
-              </InputBox>
-            </InputContainerDouble>
-            <InputContainerFull>
-              <InputBox>
-                <Label>{formData.email}</Label>
-              </InputBox>
-            </InputContainerFull>
-            <InputContainerFull>
-              <InputBox>
-                <Label>{formData.weddingdate}</Label>
-              </InputBox>
-            </InputContainerFull>
-            <InputContainerFull>
-              <InputBox>
-                <Label>{formData.guestcount}</Label>
-              </InputBox>
-            </InputContainerFull>
-            <InputContainerFull>
-              <InputBox>
-                <Label>{formData.weddingvenue}</Label>
-              </InputBox>
-            </InputContainerFull>
-            <InputContainerFull>
-              <InputBox>
-                <Label>{formData.weddingdescription}</Label>
-              </InputBox>
-            </InputContainerFull>
-          </ReceiptBody>
-          <ReceiptFooter>
-            <ButtonContainer>
-              <ButtonElementEdit> Cancel </ButtonElementEdit>
-              <ButtonElement>Contact</ButtonElement>
-            </ButtonContainer>
-          </ReceiptFooter>
-        </ReceiptContainer>
+        {id != 0 ? (
+          <ReceiptContainer>
+            <ReceiptHeader>
+              {" "}
+              <Heading>
+                {" "}
+                Request quotation by {formData.firstname}{" "}
+              </Heading>{" "}
+            </ReceiptHeader>
+            <ReceiptBody>
+              <InputContainerDouble>
+                <InputBox>
+                  <PersonIcon />
+                  <Label> {formData.firstname} </Label>
+                </InputBox>
+                <InputBox>
+                  <PersonIcon />
+                  <Label> {formData.lastname} </Label>
+                </InputBox>
+              </InputContainerDouble>
+              <InputContainerFull>
+                <InputBox>
+                  <Label>{formData.email}</Label>
+                </InputBox>
+              </InputContainerFull>
+              <InputContainerFull>
+                <InputBox>
+                  <Label>{formData.weddingdate}</Label>
+                </InputBox>
+              </InputContainerFull>
+              <InputContainerFull>
+                <InputBox>
+                  <Label>{formData.guestcount}</Label>
+                </InputBox>
+              </InputContainerFull>
+              <InputContainerFull>
+                <InputBox>
+                  <Label>{formData.weddingvenue}</Label>
+                </InputBox>
+              </InputContainerFull>
+              <InputContainerFull>
+                <InputBox>
+                  <Label>{formData.weddingdescription}</Label>
+                </InputBox>
+              </InputContainerFull>
+            </ReceiptBody>
+            <ReceiptFooter>
+              <ButtonContainer>
+                <ButtonElementEdit
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setId(0);
+                  }}
+                >
+                  {" "}
+                  Cancel{" "}
+                </ButtonElementEdit>
+                <ButtonElement>Contact</ButtonElement>
+              </ButtonContainer>
+            </ReceiptFooter>
+          </ReceiptContainer>
+        ) : null}
       </MainContainer>
     </div>
   );
